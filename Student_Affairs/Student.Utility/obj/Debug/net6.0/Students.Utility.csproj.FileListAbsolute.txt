@@ -1,0 +1,12 @@
+D:\Ass\Student_Affairs\Student.Utility\bin\Debug\net6.0\Students.Utility.deps.json
+D:\Ass\Student_Affairs\Student.Utility\bin\Debug\net6.0\Students.Utility.dll
+D:\Ass\Student_Affairs\Student.Utility\bin\Debug\net6.0\Students.Utility.pdb
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.csproj.AssemblyReference.cache
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.AssemblyInfoInputs.cache
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.AssemblyInfo.cs
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.csproj.CoreCompileInputs.cache
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.dll
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\refint\Students.Utility.dll
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\Students.Utility.pdb
+D:\Ass\Student_Affairs\Student.Utility\obj\Debug\net6.0\ref\Students.Utility.dll

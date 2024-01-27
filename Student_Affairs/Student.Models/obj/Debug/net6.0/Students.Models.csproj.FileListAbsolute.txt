@@ -1,0 +1,12 @@
+D:\Ass\Student_Affairs\Student.Models\bin\Debug\net6.0\Students.Models.deps.json
+D:\Ass\Student_Affairs\Student.Models\bin\Debug\net6.0\Students.Models.dll
+D:\Ass\Student_Affairs\Student.Models\bin\Debug\net6.0\Students.Models.pdb
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.csproj.AssemblyReference.cache
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.AssemblyInfoInputs.cache
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.AssemblyInfo.cs
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.csproj.CoreCompileInputs.cache
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.dll
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\refint\Students.Models.dll
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\Students.Models.pdb
+D:\Ass\Student_Affairs\Student.Models\obj\Debug\net6.0\ref\Students.Models.dll

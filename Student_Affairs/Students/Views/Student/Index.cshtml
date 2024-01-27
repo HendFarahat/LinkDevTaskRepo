@@ -1,0 +1,97 @@
+﻿@using Student.Utility;
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Student List</h2>
+        </div>
+       
+            <div class="col-6 text-end">
+                <a asp-controller="Student" asp-action="CreateOrUpdate" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> &nbsp; Create New Student
+                </a>
+            </div>
+  
+    </div>
+    <br /><br />
+    <div>
+        <span>Filter Students by Class</span>
+        <select id="classFilter">
+            <option value="">Select Class</option>
+            @foreach (var classItem in ViewBag.ClassList)
+            {
+                <option value="@classItem.ID">@classItem.Name</option>
+
+
+            }
+        </select>
+
+
+    </div>
+
+    <br /><br />
+       
+        <div id="divListUsers"></div>
+   
+</div>
+<div class="fixed-table-pagination">
+    <div class="pull-right pagination">
+        <ul class="pagination-sm" id="pagination"></ul>
+    </div>
+</div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+        
+        var message = @Html.Raw(Json.Serialize(TempData["success"]));
+        if (message!=null) {
+            toastr.success(message);
+
+        }
+        LoadData(0);
+
+    });
+
+
+         function LoadData(page,className) {
+
+           // $("#pageloader").show();
+            $.ajax({
+                type: 'POST',
+                url: '@(Url.Action("List", "Student"))',
+                data: {
+
+                _PageNo: page, _ClassId: className
+                },
+                cache: false,
+                dataType: "html",
+                success: function (res) {
+                    $("#divListUsers").html(res);
+                 
+
+                }
+            });
+        }
+</script>
+
+<script>
+    document.getElementById('classFilter').addEventListener('change', function () {
+        var selectedClass = this.value;
+
+        LoadData(0, selectedClass);
+
+    });
+</script>
+
+

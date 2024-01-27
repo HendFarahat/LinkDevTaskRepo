@@ -1,0 +1,617 @@
+2024-01-27 20:03:45.474 +02:00 [INF] User profile is available. Using 'C:\Users\Hend\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-27 20:03:51.326 +02:00 [INF] Executed DbCommand (135ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:03:51.517 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:03:52.276 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:03:52.440 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-01-27 20:03:52.593 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-01-27 20:03:52.643 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-01-27 20:03:52.652 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:03:52.665 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-01-27 20:03:52.681 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:03:52.701 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:04:04.145 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 11437.6798ms
+2024-01-27 20:04:04.150 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:04:04.240 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at Students.Web.Controllers.StudentController.Index() in D:\Ass\Student_Affairs\Students\Controllers\StudentController.cs:line 30
+   at lambda_method174(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2024-01-27 20:04:04.246 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.ErrorController.Error (Students.Web)'
+2024-01-27 20:04:04.248 +02:00 [INF] Route matched with {action = "Error", controller = "Error", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller Students.Web.Controllers.ErrorController (Students.Web).
+2024-01-27 20:04:13.607 +02:00 [ERR] The Path / throw an exception, THe error is System.Exception: Exception of type 'System.Exception' was thrown.
+   at Students.Web.Controllers.StudentController.Index() in D:\Ass\Student_Affairs\Students\Controllers\StudentController.cs:line 30
+   at lambda_method174(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2024-01-27 20:04:34.377 +02:00 [INF] Executing ViewResult, running view Error.
+2024-01-27 20:06:19.216 +02:00 [INF] User profile is available. Using 'C:\Users\Hend\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-27 20:06:22.881 +02:00 [INF] Executed DbCommand (112ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:06:23.097 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:06:23.836 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:06:23.999 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-01-27 20:06:24.159 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-01-27 20:06:24.214 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-01-27 20:06:24.222 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:06:24.236 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-01-27 20:06:24.253 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:06:24.271 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:06:36.654 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 12374.1537ms
+2024-01-27 20:06:36.657 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:06:36.721 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at Students.Web.Controllers.StudentController.Index() in D:\Ass\Student_Affairs\Students\Controllers\StudentController.cs:line 30
+   at lambda_method174(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2024-01-27 20:06:36.726 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.ErrorController.Error (Students.Web)'
+2024-01-27 20:06:36.728 +02:00 [INF] Route matched with {action = "Error", controller = "Error", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller Students.Web.Controllers.ErrorController (Students.Web).
+2024-01-27 20:06:36.739 +02:00 [ERR] The Path / throw an exception, THe error is System.Exception: Exception of type 'System.Exception' was thrown.
+   at Students.Web.Controllers.StudentController.Index() in D:\Ass\Student_Affairs\Students\Controllers\StudentController.cs:line 30
+   at lambda_method174(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2024-01-27 20:06:41.134 +02:00 [INF] Executing ViewResult, running view Error.
+2024-01-27 20:06:42.928 +02:00 [INF] Executed ViewResult - view Error executed in 6183.2661ms.
+2024-01-27 20:06:42.933 +02:00 [INF] Executed action Students.Web.Controllers.ErrorController.Error (Students.Web) in 6205.3858ms
+2024-01-27 20:06:42.934 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.ErrorController.Error (Students.Web)'
+2024-01-27 20:06:43.014 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:06:43.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:06:43.023 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 8.7412ms
+2024-01-27 20:06:43.038 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 500 - text/html;+charset=utf-8 19208.5242ms
+2024-01-27 20:06:43.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.0216ms
+2024-01-27 20:09:15.605 +02:00 [INF] User profile is available. Using 'C:\Users\Hend\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-27 20:09:19.574 +02:00 [INF] Executed DbCommand (137ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:09:19.765 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:09:20.352 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:09:20.466 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:09:20.485 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:09:20.534 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:09:42.288 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:09:43.083 +02:00 [INF] Executed ViewResult - view Index executed in 22519.1522ms.
+2024-01-27 20:09:43.089 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 22603.6537ms
+2024-01-27 20:09:43.090 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:09:43.160 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 22813.6332ms
+2024-01-27 20:09:43.342 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:09:43.345 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:09:43.351 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 8.7899ms
+2024-01-27 20:09:43.509 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 163.2181ms
+2024-01-27 20:09:43.756 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:09:43.766 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:09:43.787 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:09:44.035 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:09:44.413 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:09:44.436 +02:00 [INF] Executed ViewResult - view List executed in 332.5066ms.
+2024-01-27 20:09:44.436 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 649.015ms
+2024-01-27 20:09:44.436 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:09:44.438 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 681.0729ms
+2024-01-27 20:09:44.446 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:09:44.461 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 15.6614ms
+2024-01-27 20:09:44.464 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:09:44.465 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.5635ms
+2024-01-27 20:09:44.468 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:09:44.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.5643ms
+2024-01-27 20:09:44.471 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:09:44.471 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.6164ms
+2024-01-27 20:10:06.271 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate - -
+2024-01-27 20:10:06.276 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:06.278 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateOrUpdate(System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:06.287 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:10:06.775 +02:00 [INF] Executing ViewResult, running view CreateOrUpdate.
+2024-01-27 20:10:06.917 +02:00 [INF] Executed ViewResult - view CreateOrUpdate executed in 629.7726ms.
+2024-01-27 20:10:06.918 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web) in 640.5482ms
+2024-01-27 20:10:06.918 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:06.933 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate - - - 200 - text/html;+charset=utf-8 658.9681ms
+2024-01-27 20:10:06.940 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:06.947 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:06.947 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 6.9808ms
+2024-01-27 20:10:06.957 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/generalscript.js - -
+2024-01-27 20:10:06.989 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.2504ms
+2024-01-27 20:10:06.992 +02:00 [INF] The file /generalscript.js was not modified
+2024-01-27 20:10:06.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/generalscript.js - - - 304 - application/javascript 36.3436ms
+2024-01-27 20:10:27.745 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryD5co6Tl29WAuj5tn 111799
+2024-01-27 20:10:27.747 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:27.757 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateOrUpdate(Student.Models.Student, Microsoft.AspNetCore.Http.IFormFile) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:28.001 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 255), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 1), @p5='?' (Size = 255), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Address], [BirthDate], [ClassID], [EmailAddress], [Gender], [Name], [PhoneNumber], [Photo])
+OUTPUT INSERTED.[ID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-01-27 20:10:28.036 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2024-01-27 20:10:28.047 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web) in 289.4529ms
+2024-01-27 20:10:28.047 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:28.050 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryD5co6Tl29WAuj5tn 111799 - 302 0 - 304.5809ms
+2024-01-27 20:10:28.050 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:10:28.052 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:28.052 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:28.055 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:10:28.055 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:10:28.075 +02:00 [INF] Executed ViewResult - view Index executed in 20.2515ms.
+2024-01-27 20:10:28.075 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 23.3474ms
+2024-01-27 20:10:28.075 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:28.078 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 27.0515ms
+2024-01-27 20:10:28.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:28.095 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 0.2070ms
+2024-01-27 20:10:28.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:28.109 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.8693ms
+2024-01-27 20:10:28.164 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:28.165 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:28.165 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:28.180 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:28.183 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:28.189 +02:00 [INF] Executed ViewResult - view List executed in 6.0389ms.
+2024-01-27 20:10:28.189 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 23.6538ms
+2024-01-27 20:10:28.189 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:28.191 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 26.7102ms
+2024-01-27 20:10:28.204 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:28.205 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.8940ms
+2024-01-27 20:10:28.215 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:28.215 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.7467ms
+2024-01-27 20:10:28.221 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:28.222 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.8039ms
+2024-01-27 20:10:28.228 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:28.229 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.7808ms
+2024-01-27 20:10:31.147 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:31.153 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:31.153 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:31.156 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:31.157 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:31.165 +02:00 [INF] Executed ViewResult - view List executed in 7.7427ms.
+2024-01-27 20:10:31.165 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 11.8096ms
+2024-01-27 20:10:31.165 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:31.216 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 70.6899ms
+2024-01-27 20:10:31.223 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:31.223 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.4991ms
+2024-01-27 20:10:31.227 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:31.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.4887ms
+2024-01-27 20:10:31.230 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:31.231 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.5188ms
+2024-01-27 20:10:31.234 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:31.235 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.5340ms
+2024-01-27 20:10:33.182 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:33.183 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:33.183 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:33.186 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:33.186 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:33.194 +02:00 [INF] Executed ViewResult - view List executed in 8.0286ms.
+2024-01-27 20:10:33.194 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 11.2808ms
+2024-01-27 20:10:33.195 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:33.196 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 13.9199ms
+2024-01-27 20:10:33.204 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:33.204 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.5832ms
+2024-01-27 20:10:33.208 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:33.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 1.1041ms
+2024-01-27 20:10:33.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:33.212 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.6601ms
+2024-01-27 20:10:33.215 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:33.216 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.6094ms
+2024-01-27 20:10:35.150 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate/9 - -
+2024-01-27 20:10:35.151 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:35.151 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateOrUpdate(System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:35.155 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:10:35.170 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo]
+FROM [Students] AS [s]
+2024-01-27 20:10:35.171 +02:00 [INF] Executing ViewResult, running view CreateOrUpdate.
+2024-01-27 20:10:35.183 +02:00 [INF] Executed ViewResult - view CreateOrUpdate executed in 12.0004ms.
+2024-01-27 20:10:35.183 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web) in 32.2062ms
+2024-01-27 20:10:35.183 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:10:35.187 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate/9 - - - 200 - text/html;+charset=utf-8 37.4735ms
+2024-01-27 20:10:35.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:35.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:35.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg - -
+2024-01-27 20:10:35.199 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 0.2765ms
+2024-01-27 20:10:35.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.9654ms
+2024-01-27 20:10:35.245 +02:00 [INF] Sending file. Request path: '/Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg'. Physical path: 'D:\Ass\Student_Affairs\Students\wwwroot\Photos\Students\b9d23996-8d2e-40be-817e-8fce3b907021.jpg'
+2024-01-27 20:10:35.245 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg - - - 200 110438 image/jpeg 46.2108ms
+2024-01-27 20:10:39.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:10:39.295 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:39.295 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:39.298 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:10:39.298 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:10:39.305 +02:00 [INF] Executed ViewResult - view Index executed in 6.082ms.
+2024-01-27 20:10:39.305 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 9.3503ms
+2024-01-27 20:10:39.305 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:39.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 15.7042ms
+2024-01-27 20:10:39.321 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:39.321 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:39.322 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 0.4183ms
+2024-01-27 20:10:39.329 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.7916ms
+2024-01-27 20:10:39.367 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:39.369 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:39.369 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:39.372 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:39.372 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:39.382 +02:00 [INF] Executed ViewResult - view List executed in 10.185ms.
+2024-01-27 20:10:39.382 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 13.1717ms
+2024-01-27 20:10:39.382 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:39.383 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 16.7171ms
+2024-01-27 20:10:39.390 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:39.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.7518ms
+2024-01-27 20:10:39.396 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:39.396 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.8154ms
+2024-01-27 20:10:39.401 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:39.401 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.4937ms
+2024-01-27 20:10:39.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:39.405 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.5224ms
+2024-01-27 20:10:40.593 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Identity/Account/Manage - -
+2024-01-27 20:10:40.866 +02:00 [INF] Executing endpoint '/Account/Manage/Index'
+2024-01-27 20:10:41.099 +02:00 [INF] Route matched with {page = "/Account/Manage/Index", area = "Identity", action = "", controller = ""}. Executing page /Account/Manage/Index
+2024-01-27 20:10:41.117 +02:00 [INF] Executing handler method Students.Web.Areas.Identity.Pages.Account.Manage.IndexModel.OnGetAsync - ModelState is "Valid"
+2024-01-27 20:10:41.146 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2024-01-27 20:10:41.212 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-01-27 20:10:41.835 +02:00 [INF] Executed page /Account/Manage/Index in 735.1672ms
+2024-01-27 20:10:41.835 +02:00 [INF] Executed endpoint '/Account/Manage/Index'
+2024-01-27 20:10:41.838 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Identity/Account/Manage - - - 200 - text/html;+charset=utf-8 1245.8566ms
+2024-01-27 20:10:41.860 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:41.860 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:41.860 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 0.7306ms
+2024-01-27 20:10:41.866 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.5801ms
+2024-01-27 20:10:44.272 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:10:44.275 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:44.275 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:44.278 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:10:44.279 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:10:44.287 +02:00 [INF] Executed ViewResult - view Index executed in 8.223ms.
+2024-01-27 20:10:44.287 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 11.925ms
+2024-01-27 20:10:44.287 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:10:44.289 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 16.8223ms
+2024-01-27 20:10:44.299 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:10:44.305 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:10:44.318 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.3910ms
+2024-01-27 20:10:44.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 29.4917ms
+2024-01-27 20:10:44.371 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:44.373 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:44.375 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:44.380 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:44.381 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:44.386 +02:00 [INF] Executed ViewResult - view List executed in 5.356ms.
+2024-01-27 20:10:44.386 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 11.0032ms
+2024-01-27 20:10:44.386 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:44.388 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 17.2625ms
+2024-01-27 20:10:44.397 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:44.398 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.5574ms
+2024-01-27 20:10:44.400 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:44.401 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.5686ms
+2024-01-27 20:10:44.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:44.404 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.5617ms
+2024-01-27 20:10:44.408 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:44.408 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.5391ms
+2024-01-27 20:10:46.332 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:10:46.334 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:46.334 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:46.337 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:10:46.338 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:46.346 +02:00 [INF] Executed ViewResult - view List executed in 7.9351ms.
+2024-01-27 20:10:46.346 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 12.141ms
+2024-01-27 20:10:46.346 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:46.347 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 14.8809ms
+2024-01-27 20:10:46.354 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:46.355 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.6085ms
+2024-01-27 20:10:46.360 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:46.360 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.7257ms
+2024-01-27 20:10:46.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:46.365 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.5877ms
+2024-01-27 20:10:46.368 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:46.369 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.5784ms
+2024-01-27 20:10:52.513 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20
+2024-01-27 20:10:52.514 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:52.515 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:52.530 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@___ClassId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+WHERE [s].[ClassID] = @___ClassId_0
+2024-01-27 20:10:52.530 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:52.535 +02:00 [INF] Executed ViewResult - view List executed in 5.2024ms.
+2024-01-27 20:10:52.536 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 21.0058ms
+2024-01-27 20:10:52.536 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:52.537 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20 - 200 - text/html;+charset=utf-8 24.2375ms
+2024-01-27 20:10:52.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:52.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.5107ms
+2024-01-27 20:10:52.547 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:52.548 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.9891ms
+2024-01-27 20:10:52.551 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:52.551 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.4824ms
+2024-01-27 20:10:52.554 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:52.555 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.4795ms
+2024-01-27 20:10:54.376 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20
+2024-01-27 20:10:54.378 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:54.378 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:10:54.385 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@___ClassId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+WHERE [s].[ClassID] = @___ClassId_0
+2024-01-27 20:10:54.385 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:10:54.391 +02:00 [INF] Executed ViewResult - view List executed in 5.743ms.
+2024-01-27 20:10:54.391 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 12.6699ms
+2024-01-27 20:10:54.391 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:10:54.392 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20 - 200 - text/html;+charset=utf-8 16.2404ms
+2024-01-27 20:10:54.398 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:10:54.399 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.4993ms
+2024-01-27 20:10:54.402 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:10:54.402 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.4977ms
+2024-01-27 20:10:54.405 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:10:54.406 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.9607ms
+2024-01-27 20:10:54.409 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:10:54.410 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.6367ms
+2024-01-27 20:29:43.292 +02:00 [INF] User profile is available. Using 'C:\Users\Hend\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-27 20:29:49.927 +02:00 [INF] Executed DbCommand (208ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-01-27 20:29:50.207 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:29:50.878 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:29:51.050 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:29:51.067 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:29:51.133 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:30:15.040 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:30:16.123 +02:00 [INF] Executed ViewResult - view Index executed in 24948.4006ms.
+2024-01-27 20:30:16.130 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 25062.0054ms
+2024-01-27 20:30:16.131 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:30:16.198 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 25330.4432ms
+2024-01-27 20:30:16.264 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:30:16.264 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:30:16.272 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 8.3162ms
+2024-01-27 20:30:16.295 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.6019ms
+2024-01-27 20:30:16.359 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:30:16.366 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:30:16.388 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:30:16.631 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:30:17.097 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:30:17.124 +02:00 [INF] Executed ViewResult - view List executed in 403.1063ms.
+2024-01-27 20:30:17.125 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 736.1303ms
+2024-01-27 20:30:17.125 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:30:17.126 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 766.9258ms
+2024-01-27 20:30:17.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:30:17.152 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 14.0655ms
+2024-01-27 20:30:17.156 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:30:17.156 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.5745ms
+2024-01-27 20:30:17.160 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:30:17.160 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.5997ms
+2024-01-27 20:30:17.164 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:30:17.165 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.4830ms
+2024-01-27 20:35:53.734 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate/9 - -
+2024-01-27 20:35:53.750 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:35:53.752 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateOrUpdate(System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:35:53.762 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:35:53.776 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo]
+FROM [Students] AS [s]
+2024-01-27 20:35:54.186 +02:00 [INF] Executing ViewResult, running view CreateOrUpdate.
+2024-01-27 20:35:54.275 +02:00 [INF] Executed ViewResult - view CreateOrUpdate executed in 498.0401ms.
+2024-01-27 20:35:54.275 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web) in 522.7715ms
+2024-01-27 20:35:54.275 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.CreateOrUpdate (Students.Web)'
+2024-01-27 20:35:54.280 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Student/CreateOrUpdate/9 - - - 200 - text/html;+charset=utf-8 545.9155ms
+2024-01-27 20:35:54.303 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:35:54.306 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 2.7709ms
+2024-01-27 20:35:54.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg - -
+2024-01-27 20:35:54.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:35:54.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/generalscript.js - -
+2024-01-27 20:35:54.328 +02:00 [INF] The file /Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg was not modified
+2024-01-27 20:35:54.328 +02:00 [INF] The file /generalscript.js was not modified
+2024-01-27 20:35:54.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/Photos/Students/b9d23996-8d2e-40be-817e-8fce3b907021.jpg - - - 304 - image/jpeg 51.1225ms
+2024-01-27 20:35:54.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/generalscript.js - - - 304 - application/javascript 50.9725ms
+2024-01-27 20:35:54.361 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.4055ms
+2024-01-27 20:35:56.402 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/ - -
+2024-01-27 20:35:56.403 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:35:56.404 +02:00 [INF] Route matched with {action = "Index", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:35:56.408 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Name]
+FROM [Classes] AS [c]
+2024-01-27 20:35:56.408 +02:00 [INF] Executing ViewResult, running view Index.
+2024-01-27 20:35:56.424 +02:00 [INF] Executed ViewResult - view Index executed in 16.1314ms.
+2024-01-27 20:35:56.425 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.Index (Students.Web) in 20.7903ms
+2024-01-27 20:35:56.425 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.Index (Students.Web)'
+2024-01-27 20:35:56.428 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/ - - - 200 - text/html;+charset=utf-8 25.7588ms
+2024-01-27 20:35:56.435 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - -
+2024-01-27 20:35:56.435 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/_vs/browserLink - -
+2024-01-27 20:35:56.435 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_framework/aspnetcore-browser-refresh.js - - - 200 12356 application/javascript;+charset=utf-8 0.3626ms
+2024-01-27 20:35:56.447 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.3168ms
+2024-01-27 20:35:56.508 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9
+2024-01-27 20:35:56.513 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:35:56.514 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:35:56.522 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+2024-01-27 20:35:56.523 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:35:56.528 +02:00 [INF] Executed ViewResult - view List executed in 4.958ms.
+2024-01-27 20:35:56.528 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 14.1679ms
+2024-01-27 20:35:56.528 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:35:56.529 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 9 - 200 - text/html;+charset=utf-8 21.8378ms
+2024-01-27 20:35:56.538 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:35:56.539 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.7190ms
+2024-01-27 20:35:56.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:35:56.544 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.7120ms
+2024-01-27 20:35:56.548 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:35:56.549 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.6850ms
+2024-01-27 20:35:56.553 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:35:56.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.9668ms
+2024-01-27 20:36:00.855 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20
+2024-01-27 20:36:00.857 +02:00 [INF] Executing endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:36:00.858 +02:00 [INF] Route matched with {action = "List", controller = "Student", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult List(Int32, System.Nullable`1[System.Int32]) on controller Students.Web.Controllers.StudentController (Students.Web).
+2024-01-27 20:36:00.884 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@___ClassId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ID], [s].[Address], [s].[BirthDate], [s].[ClassID], [s].[EmailAddress], [s].[Gender], [s].[Name], [s].[PhoneNumber], [s].[Photo], [c].[ID], [c].[Name]
+FROM [Students] AS [s]
+INNER JOIN [Classes] AS [c] ON [s].[ClassID] = [c].[ID]
+WHERE [s].[ClassID] = @___ClassId_0
+2024-01-27 20:36:00.884 +02:00 [INF] Executing ViewResult, running view List.
+2024-01-27 20:36:00.890 +02:00 [INF] Executed ViewResult - view List executed in 6.2881ms.
+2024-01-27 20:36:00.891 +02:00 [INF] Executed action Students.Web.Controllers.StudentController.List (Students.Web) in 33.1592ms
+2024-01-27 20:36:00.891 +02:00 [INF] Executed endpoint 'Students.Web.Controllers.StudentController.List (Students.Web)'
+2024-01-27 20:36:00.893 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7212/Student/List application/x-www-form-urlencoded;+charset=UTF-8 20 - 200 - text/html;+charset=utf-8 37.7145ms
+2024-01-27 20:36:00.901 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - -
+2024-01-27 20:36:00.901 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/jquery.dataTables.min.js - - - 404 0 - 0.6903ms
+2024-01-27 20:36:00.905 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - -
+2024-01-27 20:36:00.905 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.bootstrap4.min.js - - - 404 0 - 0.5122ms
+2024-01-27 20:36:00.909 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - -
+2024-01-27 20:36:00.909 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/dataTables.responsive.min.js - - - 404 0 - 0.6915ms
+2024-01-27 20:36:00.913 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - -
+2024-01-27 20:36:00.914 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7212/assets/vendor/datatables/responsive.bootstrap4.min.js - - - 404 0 - 0.5107ms

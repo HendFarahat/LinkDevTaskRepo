@@ -1,0 +1,215 @@
+﻿@model Student.Models.Student
+@* @{
+    ViewData["Title"] = "CreateOrUpdate";
+} *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/generalscript.js"></script>
+
+
+<form method="post" asp-action="CreateOrUpdate" enctype="multipart/form-data">
+    <input asp-for="ID" hidden />
+    <input asp-for="Photo" hidden />
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 mt-4 row">
+                <div class="col-12 pb-2">
+                    <h2 class="text-primary">@(Model.ID != 0 ? "Update" : "Create")  Student</h2>
+                    <hr />
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label asp-for="Name">Name<span class="small-text text-danger">*</span></label>
+                            <input asp-for="Name" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label asp-for="EmailAddress"></label>
+                            <input asp-for="EmailAddress" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 col-6">
+                            <label asp-for="Gender">Gender<span class="small-text text-danger">*</span></label>
+                            <select asp-for="Gender" class="form-select">
+                                <option disabled selected value="">--Select Gender--</option>
+                                <option value="F">Female</option>
+                                <option value="M">Male</option>
+
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 col-6">
+                            <label asp-for="Address"></label>
+                            <input asp-for="Address" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3col-6 col-6">
+                            <label asp-for="BirthDate"></label>
+                            <input asp-for="BirthDate" class="form-control datepicker" autocomplete="off" />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label asp-for="PhoneNumber"> Phone Number<span class="small-text text-danger">*</span></label>
+                            <input asp-for="PhoneNumber" class="form-control digit" autocomplete="off" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="mb-3 col-6">
+                            <label asp-for="ClassID">Class<span class="small-text text-danger">*</span></label>
+                            <select asp-for="ClassID" class="form-select">
+                                <option disabled selected value="">--Select Class--</option>
+                                @foreach (var classItem in ViewBag.ClassList)
+                                {
+                                    <option value="@classItem.ID">@classItem.Name</option>
+
+
+                                }
+                            </select>
+
+
+                            <span asp-validation-for="ClassID" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Photo"></label>
+                    <input type="file" id="uploadBox" name="image" class="form-control" onchange="loadFile(this)" />
+                </div>
+
+
+                <div class="col-12">
+                    @if (Model.ID != 0)
+                    {
+                        <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Update</button>
+                    }
+                    else
+                    {
+                        <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Create</button>
+                    }
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                        Back to List
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-2 pt-4">
+            @if (Model.Photo != null)
+            {
+                <img src="@Model.Photo"
+                     width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            }
+
+        </div>
+    </div>
+
+
+
+</form>
+
+
+<script>
+
+
+    var ImageMagicNumbers = ["FFD8FFE0", "89504e47", "47494638", "ffd8ffe0", "ffd8ffe1"];
+    var MaxSize = "300";
+
+    $(document).ready(function () {
+        MovedWithEnter();
+        $(".datepicker").datepicker({
+            todayHighlight: true,
+            endDate: "new Date()",
+            //rtl: true
+        });//
+
+
+        //
+        $(".digit").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                if ((e.key == '.' && e.currentTarget.value.indexOf(".") == -1)) {
+                    return false;
+                }
+                else if (e.key = '-' && e.which == 45 && e.currentTarget.value.indexOf("-") == -1) {
+                    return true;
+                }
+                return false;
+            }
+            if ((e.key == '0' && (e.currentTarget.value.length == 1 && (e.currentTarget.value.indexOf("-") >= 0) || (e.currentTarget.value.length > 1 && ((e.currentTarget.value.indexOf("-") == -1 && e.currentTarget.value.indexOf("0") == 0) || (e.currentTarget.value.indexOf("-") >= 0 && e.currentTarget.value.indexOf("0") == 1))) || e.currentTarget.value.length == 0))) {
+                return false
+            }
+        });
+
+    });//end of ready
+
+    function loadFile(ele) {
+        var image = document.getElementById('ImageUploded');
+
+        //Check Magic Number
+
+        var ImgFile = ele.files[0];
+        // check extension
+        const maxAllowedSize = parseInt(MaxSize) * 1024 * 1024;
+
+        var fileName = ele.files[0].name;
+        var fileExt = fileName.substring(fileName.lastIndexOf('.') + 1);
+        var ext = fileExt.trim().toLowerCase();
+        var reader2 = new FileReader();
+        reader2.onload = (function (theFile) {
+
+            return function (e) {
+                var arr = (new Uint8Array(e.target.result)).subarray(0, 4);
+                var header = "";
+                for (var i = 0; i < arr.length; i++) {
+                    header += arr[i].toString(16);
+                    //
+                }
+                var CheckMagicNumber = jQuery.inArray(header, ImageMagicNumbers);
+                if (CheckMagicNumber == -1) {
+                    toastr.error("   ", "File Must be Photo");
+                    $('.dropify-clear').click();
+                    $("#uploadBox").val('')
+                }
+                else if (ImgFile.size > maxAllowedSize) {
+                    $('.dropify-clear').click();
+                    toastr.error("   ", "MaxSize5Mega");
+                    $("#uploadBox").val('')
+                }
+                else if (ext != "jpg" && ext != "jpeg" && ext != "png" && ext != "gif") {
+                    toastr.error("   ", "File Must be Photo");
+                    $('.dropify-clear').click();
+                    $("#uploadBox").val('')
+                }
+
+            };
+        })(ImgFile);
+        reader2.readAsArrayBuffer(ImgFile);
+
+    }
+
+
+
+
+
+
+    //
+    function ValidateInput() {
+     
+        var valid = CheckValidation();
+        if (valid == false) {
+
+            return;
+        }
+
+    }
+</script>
+
+<script src="~/generalscript.js"></script>
